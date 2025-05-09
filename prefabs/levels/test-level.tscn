@@ -28,6 +28,7 @@ mesh = SubResource("PlaneMesh_cw7b1")
 
 [node name="DisabledPlayer" parent="." instance=ExtResource("1_iwr06")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.08488, 0)
+push_strength = 1.1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_cw7b1")
