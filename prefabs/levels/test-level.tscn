@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcjoqft7eqoxa"]
+
+[ext_resource type="PackedScene" uid="uid://cpd1r7p66wdly" path="res://prefabs/player/disabled_player.tscn" id="1_iwr06"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_m4umn"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cw7b1"]
+size = Vector2(20, 20)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iwr06"]
+
+[sub_resource type="Sky" id="Sky_m4umn"]
+sky_material = SubResource("ProceduralSkyMaterial_iwr06")
+
+[sub_resource type="Environment" id="Environment_cw7b1"]
+background_mode = 2
+sky = SubResource("Sky_m4umn")
+
+[node name="TestLevel" type="Node3D"]
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("WorldBoundaryShape3D_m4umn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("PlaneMesh_cw7b1")
+
+[node name="DisabledPlayer" parent="." instance=ExtResource("1_iwr06")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.08488, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cw7b1")

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpd1r7p66wdly"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ixu7p"]
+size = Vector3(1.35, 1, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_f1u8p"]
+size = Vector3(1.35, 1, 2)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qor4e"]
+
+[node name="DisabledPlayer" type="RigidBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ixu7p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_f1u8p")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.652704, 0.449546)
+mesh = SubResource("CapsuleMesh_qor4e")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.30391e-08, -0.174714, 0.984619, -7.63698e-09, 0.984619, 0.174714, -1, 8.88178e-16, -4.37114e-08, 2.88949, 1.0924, 0.0286316)
