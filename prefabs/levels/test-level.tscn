@@ -1,11 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://bcjoqft7eqoxa"]
+[gd_scene load_steps=9 format=3 uid="uid://bcjoqft7eqoxa"]
 
-[ext_resource type="PackedScene" uid="uid://cpd1r7p66wdly" path="res://prefabs/player/disabled_player.tscn" id="1_iwr06"]
+[ext_resource type="PackedScene" uid="uid://cpd1r7p66wdly" path="res://prefabs/player/disabled-player.tscn" id="1_iwr06"]
+[ext_resource type="Texture2D" uid="uid://caa83ivhqrfmd" path="res://icon.svg" id="1_m4umn"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_m4umn"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cw7b1"]
+albedo_texture = ExtResource("1_m4umn")
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_cw7b1"]
-size = Vector2(20, 20)
+material = SubResource("StandardMaterial3D_cw7b1")
+size = Vector2(200, 200)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iwr06"]
 
@@ -28,7 +33,9 @@ mesh = SubResource("PlaneMesh_cw7b1")
 
 [node name="DisabledPlayer" parent="." instance=ExtResource("1_iwr06")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.08488, 0)
-push_strength = 1.1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_cw7b1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0222511, 0.999752, 0, -0.999752, -0.0222511, 0, 8.16207, 0)
