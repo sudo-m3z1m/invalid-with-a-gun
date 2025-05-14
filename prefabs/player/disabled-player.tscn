@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpd1r7p66wdly"]
+[gd_scene load_steps=9 format=3 uid="uid://cpd1r7p66wdly"]
 
 [ext_resource type="PackedScene" uid="uid://61d4ky1dgebx" path="res://assets/models/objects/wheelchair.glb" id="1_f1u8p"]
 [ext_resource type="Script" uid="uid://di5j14cuocg14" path="res://prefabs/player/disabled-player.gd" id="1_qor4e"]
 [ext_resource type="Script" uid="uid://dh6o3axh0sk5l" path="res://prefabs/gameplay/state-machine/state-machine.gd" id="3_a8hdu"]
+[ext_resource type="Script" uid="uid://rtvqgecwq" path="res://prefabs/gameplay/gameplay-camera.gd" id="3_f12ag"]
 [ext_resource type="Script" uid="uid://dqxueb77b52yj" path="res://prefabs/player/states/player-idle.gd" id="4_uc3s0"]
 [ext_resource type="Script" uid="uid://cnulvhcwt74rn" path="res://prefabs/player/states/player-moving.gd" id="5_asyy5"]
 
@@ -29,7 +30,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3015, -0.110373)
 mesh = SubResource("CapsuleMesh_qor4e")
 
 [node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62917, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97513, 0)
+script = ExtResource("3_f12ag")
+rot_deg_x = 1.5708
+rot_deg_y = 3.14159
+sensintivity = 0.005
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_a8hdu")
